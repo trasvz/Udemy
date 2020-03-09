@@ -14,9 +14,17 @@
         <div id="app">
             <input type="text" v-on:input="ChangeTitle">
             <h2 v-once>{{ title2 }}</h2>
-            <p>{{ sayHellocok() }}</p>
+            <p>{{ title }}</p>
             <a v-bind:href="link">Nonton Duls</a>
+            <hr>
+            <p v-html="link2"></p>
             <p><3</p>
+            <hr>
+            <h3>This is counter</h3>
+            <button v-on:click="inccounter">Up</button>
+            <p>{{counter}}</p>
+            <hr>
+            <p v-on:mousemove="getCoor">Coordinates = {{x}}/{{y}}</p>
         </div>
 
         <script>
@@ -25,7 +33,11 @@
                 data: {
                     title: 'Hello cok',
                     title2: "Hello asu",
-                    link: 'http://animekompi.web.id'
+                    link: 'http://animekompi.web.id',
+                    link2: '<a href="http://animekompi.web.id">Nonton</a>',
+                    counter: 0,
+                    x : 0,
+                    y : 0
                 },
                 methods: {
                     ChangeTitle: function(event) {
@@ -34,6 +46,13 @@
                     sayHellocok: function(){
                         this.title2 = "Hello mbut";
                         return this.title2;
+                    },
+                    inccounter: function(){
+                        this.counter++;
+                    },
+                    getCoor: function(event){
+                        this.x = event.clientX,
+                        this.y = event.clientY;
                     }
                 }
             });
