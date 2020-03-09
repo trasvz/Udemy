@@ -13,18 +13,27 @@
         
         <div id="app">
             <input type="text" v-on:input="ChangeTitle">
-            <p>{{ title }}</p>
+            <h2 v-once>{{ title2 }}</h2>
+            <p>{{ sayHellocok() }}</p>
+            <a v-bind:href="link">Nonton Duls</a>
+            <p><3</p>
         </div>
 
         <script>
             new Vue({
                 el: '#app',
                 data: {
-                    title: 'Hello cok'
+                    title: 'Hello cok',
+                    title2: "Hello asu",
+                    link: 'http://animekompi.web.id'
                 },
                 methods: {
                     ChangeTitle: function(event) {
                         this.title = event.target.value;
+                    },
+                    sayHellocok: function(){
+                        this.title2 = "Hello mbut";
+                        return this.title2;
                     }
                 }
             });
