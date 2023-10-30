@@ -1,10 +1,12 @@
-import { it, expect } from 'vitest';
+import { it, expect, describe } from 'vitest';
 
 import writeData from './io.js';
 
-it('should execute the writeFile method', () => {
-    const testData = 'Test';
-    const testFileName = 'test.txt';
-
-    expect(writeData(testData, testFileName)).resolves.toBeUndefined();
+describe('#writeData', () => {
+    it('should execute the writeFile method', () => {
+        const testData = 'Test';
+        const testFileName = 'test.txt';
+    
+        expect(writeData(testData, testFileName)).resolves.toBeUndefined();
+    });    
 });
